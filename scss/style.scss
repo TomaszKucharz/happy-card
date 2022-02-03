@@ -2,4 +2,48 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	body {
+		width: 80vw;
+		height: 90vh;
+		margin: 5vh auto;
+		.wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			label {
+				text-align: center;
+				font-size: 30px;
+				line-height: 60px;
+				font-family: 'Montserrat', serif;
+				color: white;
+				background: linear-gradient(145deg, #0d64f0, #168bcf, #8f29ca);
+				height: 60px;
+				width: 60vw;
+			}
+			.header {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+				align-items: center;
+				flex-wrap: wrap;
+				.card {
+					border: 1px solid rgb(138, 138, 138);
+					border-radius: 10px;
+					margin-top: 5vh;
+					flex-basis: 30%;
+					height: 30vh;
+					width: 20vw;
+					text-align: center;
+					line-height: 300px;
+					transition: 0.9s;
+					cursor: pointer;
+				}
+				.card:hover {
+					background-color: rgb(209, 209, 209);
+					transform: rotateY(325deg);
+				}
+			}
+		}
+	}
 }
