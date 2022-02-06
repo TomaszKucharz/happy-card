@@ -47,12 +47,12 @@
 			.bar {
 				display: flex;
 				border: none;
-				padding: 10px 20px;
-				width: 100%;
+				width: 540px;
 				justify-content: center;
 				align-items: center;
 				.btn {
-					margin: 0 60px;
+					margin: 0 auto;
+
 					padding: 2px 5px;
 					width: 60px;
 					height: 30px;
@@ -69,21 +69,35 @@
 					background-color: #0de289;
 				}
 				.off {
-					border: 3px solid #000;
+					border: 3px solid #f1bac3;
 					background-color: #f1bac3;
 				}
 			}
-			.clear {
-				margin-top: 10vh;
-				width: 300px;
-				padding: 10px 20px;
-				font-size: 1.2rem;
-				border: none;
-				cursor: pointer;
-				background-color: #5283d1;
-				visibility: hidden;
-				span {
-					color: white;
+			.activeGame {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				.btnActive {
+					width: 200px;
+					margin: 5vh 10px;
+					padding: 10px 20px;
+					font-size: 1.2rem;
+					border: none;
+					cursor: pointer;
+				}
+				.start {
+					background-color: #05c35b;
+					visibility: hidden;
+					span {
+						color: white;
+					}
+				}
+				.clear {
+					background-color: #5283d1;
+					visibility: hidden;
+					span {
+						color: white;
+					}
 				}
 			}
 		}
@@ -105,14 +119,13 @@
 				.bar {
 					display: flex;
 					border: none;
-					padding: 10px 20px;
-					width: 100%;
+					width: 360px;
 					justify-content: center;
 					align-items: center;
 					background-color: rgb(255, 166, 0);
 
 					.btn {
-						margin: 0 30px;
+						margin: 0 auto;
 						padding: 2px 5px;
 						min-width: 60px;
 						height: 30px;
@@ -121,6 +134,11 @@
 					}
 					.btn:hover {
 						border: 2px solid rgb(13, 226, 137);
+					}
+				}
+				.activeGame {
+					.btnActive {
+						width: 150px;
 					}
 				}
 			}
@@ -161,6 +179,11 @@
 					}
 					.btn:hover {
 						border: 2px solid rgb(13, 226, 137);
+					}
+				}
+				.activeGame {
+					.btnActive {
+						width: 100px;
 					}
 				}
 			}

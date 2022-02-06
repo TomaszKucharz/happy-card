@@ -3,7 +3,7 @@ const buttonOne = document.getElementById(`btn-1`);
 const buttonTwo = document.getElementById(`btn-2`);
 const buttonThree = document.getElementById(`btn-3`);
 const clear = document.querySelector(`.clear`);
-
+const start = document.querySelector(`.start`);
 const buttonsArrays = [buttonOne, buttonTwo, buttonThree];
 
 const blockOtherButtons = () => {
@@ -21,6 +21,8 @@ const showSign = (e) => {
 	if (e.target.textContent === '') {
 		e.target.textContent = 'X';
 		clear.style.visibility = 'visible';
+		start.style.visibility = 'visible';
+
 		e.target.classList.add('on');
 		blockOtherButtons();
 	} else {
@@ -32,6 +34,11 @@ buttonOne.addEventListener(`click`, showSign);
 buttonTwo.addEventListener(`click`, showSign);
 buttonThree.addEventListener(`click`, showSign);
 
+start.addEventListener(`click`, () => {
+	// const wynik = Math.floor(Math.random * 3);
+	// console.log(wynik);
+});
+
 clear.addEventListener(`click`, () => {
 	buttonsArrays.forEach((el) => {
 		el.classList.remove(`on`);
@@ -41,6 +48,7 @@ clear.addEventListener(`click`, () => {
 	});
 
 	clear.style.visibility = 'hidden';
+	start.style.visibility = 'hidden';
 });
 
 // disabled selected
