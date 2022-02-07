@@ -36,11 +36,16 @@
 					width: 170px;
 					text-align: center;
 					line-height: 250px;
-					transition: transform 0.75s, background-color 2s;
+					transition: transform 0.5s;
 					cursor: pointer;
 				}
-				.card:hover {
-					background-color: rgb(131, 251, 177);
+				.cardActive {
+					background-color: #fff;
+					background-image: url(/images/pirate-47705_640.png);
+					background-size: contain;
+					background-position: center;
+					background-repeat: no-repeat;
+					border: none;
 					transform: rotateX(180deg);
 				}
 			}

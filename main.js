@@ -35,8 +35,9 @@ buttonTwo.addEventListener(`click`, showSign);
 buttonThree.addEventListener(`click`, showSign);
 
 start.addEventListener(`click`, () => {
-	// const wynik = Math.floor(Math.random * 3);
-	// console.log(wynik);
+	const wynik = cardsArray[Math.floor(Math.random() * cardsArray.length)];
+	wynik.classList.add('cardActive');
+	start.style.visibility = 'hidden';
 });
 
 clear.addEventListener(`click`, () => {
@@ -46,9 +47,12 @@ clear.addEventListener(`click`, () => {
 		el.textContent = '';
 		el.removeAttribute('disabled');
 	});
+	cardsArray.forEach((el) => {
+		el.classList.remove('cardActive');
+	});
 
 	clear.style.visibility = 'hidden';
-	start.style.visibility = 'hidden';
+	// start.style.visibility = 'hidden';
 });
 
 // disabled selected
