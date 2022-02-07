@@ -1,4 +1,4 @@
-const cardsArray = document.querySelectorAll(`.card`);
+const cardsArray = [...document.querySelectorAll(`.card`)];
 const buttonOne = document.getElementById(`btn-1`);
 const buttonTwo = document.getElementById(`btn-2`);
 const buttonThree = document.getElementById(`btn-3`);
@@ -20,10 +20,10 @@ const showSign = (e) => {
 
 	if (e.target.textContent === '') {
 		e.target.textContent = 'X';
-		clear.style.visibility = 'visible';
 		start.style.visibility = 'visible';
 
 		e.target.classList.add('on');
+		console.log(buttonsArrays.indexOf(e.target));
 		blockOtherButtons();
 	} else {
 		return alert('wyczyść klawisze');
@@ -36,8 +36,10 @@ buttonThree.addEventListener(`click`, showSign);
 
 start.addEventListener(`click`, () => {
 	const wynik = cardsArray[Math.floor(Math.random() * cardsArray.length)];
+	console.log(cardsArray.indexOf(wynik));
 	wynik.classList.add('cardActive');
 	start.style.visibility = 'hidden';
+	clear.style.visibility = 'visible';
 });
 
 clear.addEventListener(`click`, () => {

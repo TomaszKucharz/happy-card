@@ -40,13 +40,12 @@
 					cursor: pointer;
 				}
 				.cardActive {
-					background-color: #fff;
+					transform: rotateX(180deg);
 					background-image: url(/images/pirate-47705_640.png);
 					background-size: contain;
 					background-position: center;
 					background-repeat: no-repeat;
 					border: none;
-					transform: rotateX(180deg);
 				}
 			}
 			.bar {
@@ -61,6 +60,7 @@
 					padding: 2px 5px;
 					width: 60px;
 					height: 30px;
+					border-radius: 20px;
 					transition: border 0.3s;
 					border: 3px solid rgb(142, 142, 142);
 					background-color: rgb(202, 202, 202);
@@ -81,10 +81,11 @@
 			.activeGame {
 				display: flex;
 				justify-content: center;
+				flex-direction: column;
 				align-items: center;
 				.btnActive {
 					width: 200px;
-					margin: 5vh 10px;
+					margin: 5vh 10px 0;
 					padding: 10px 20px;
 					font-size: 1.2rem;
 					border: none;
@@ -100,6 +101,7 @@
 				.clear {
 					background-color: #5283d1;
 					visibility: hidden;
+					margin-bottom: 5vh;
 					span {
 						color: white;
 					}
