@@ -29,7 +29,7 @@
 				justify-content: space-evenly;
 				align-items: center;
 				flex-wrap: nowrap;
-				.card {
+				.img {
 					z-index: 0;
 					border: 1px solid rgb(255, 255, 255);
 					border-radius: 10px;
@@ -38,13 +38,11 @@
 					width: 170px;
 					text-align: center;
 					line-height: 250px;
+					visibility: hidden;
 				}
 				.cardActive {
-					background-image: url('https://github.com/TomaszKucharz/happy-card/blob/master/images/pirate-47705_640.png');
-					background-size: contain;
-					background-position: center;
-					background-repeat: no-repeat;
 					border: none;
+					visibility: visible;
 				}
 				.layer {
 					position: absolute;
@@ -52,17 +50,17 @@
 					.cardLayer {
 						z-index: 1;
 						border: 1px solid rgb(153, 153, 153);
-						//************************************************
-						background-color: rgba($color: #f8cece, $alpha: 0.99);
-						//************************************************
+						background-color: rgba($color: #f8cece, $alpha: 1);
 						border-radius: 10px;
 						margin: 5vh 5px;
 						height: 250px;
 						width: 170px;
 						text-align: center;
 						line-height: 250px;
-						transition: background-image 2s;
-						transition: transform 0.7s;
+						transition: transform 1s;
+						img {
+							border-radius: 10px;
+						}
 					}
 					.cardLayer:hover {
 						box-shadow: 0 0 2px 2px rgb(153, 153, 153);
@@ -141,7 +139,7 @@
 					font-size: 25px;
 				}
 				.header {
-					.card {
+					.img {
 						height: 180px;
 						width: 110px;
 						line-height: 180px;
@@ -151,7 +149,7 @@
 							height: 180px;
 							width: 110px;
 							line-height: 180px;
-							transition: background-image 2s;
+							transition: transform 1s;
 						}
 					}
 				}
@@ -177,7 +175,7 @@
 					font-size: 20px;
 				}
 				.header {
-					.card {
+					.img {
 						width: 90px;
 					}
 					.layer {
@@ -185,7 +183,7 @@
 							height: 180px;
 							width: 90px;
 							line-height: 180px;
-							transition: background-image 2s;
+							transition: transform 1s;
 						}
 					}
 				}
@@ -211,7 +209,7 @@
 					font-size: 18px;
 				}
 				.header {
-					.card {
+					.img {
 						height: 130px;
 						width: 70px;
 						line-height: 130px;
@@ -221,6 +219,7 @@
 							height: 130px;
 							width: 70px;
 							line-height: 130px;
+							transition: transform 1s;
 						}
 					}
 				}

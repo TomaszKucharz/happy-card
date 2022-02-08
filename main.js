@@ -1,4 +1,4 @@
-const cardsArray = [...document.querySelectorAll(`.card`)];
+const cardsArray = [...document.querySelectorAll(`.img`)];
 const cardLayerArray = [...document.querySelectorAll(`.cardLayer`)];
 const buttonOne = document.getElementById(`btn-1`);
 const buttonTwo = document.getElementById(`btn-2`);
@@ -39,19 +39,23 @@ buttonThree.addEventListener(`click`, showSign);
 
 start.addEventListener(`click`, () => {
 	const wynik = cardsArray[Math.floor(Math.random() * cardsArray.length)];
-	console.log(cardsArray.indexOf(wynik));
+	// console.log(cardsArray.indexOf(wynik));
 	wynik.classList.add('cardActive');
 	cardLayerArray[cardsArray.indexOf(wynik)].classList.add(`moveCard`);
 	start.style.visibility = 'hidden';
 	clear.style.visibility = 'visible';
 	if (F === cardsArray.indexOf(wynik)) {
-		console.log(`YOU WIN`);
+		document.querySelector(`.form`).textContent = 'Yeee  Wygrałeś!';
+		document.querySelector(`.form`).style.background = '#0de289';
 	} else {
-		console.log(`YOU LOST`);
+		document.querySelector(`label`).style.background = 'red';
+		document.querySelector(`.form`).textContent = 'Jolly Roger wygrał, szykuj gardło!!';
 	}
 });
 
 clear.addEventListener(`click`, () => {
+	document.querySelector(`.form`).textContent = 'Losowanie szczęśliwej karty';
+	document.querySelector(`label`).style.background = 'linear-gradient(145deg, #0d64f0, #168bcf, #8f29ca)';
 	buttonsArrays.forEach((el) => {
 		el.classList.remove(`on`);
 		el.classList.remove(`off`);
@@ -66,7 +70,6 @@ clear.addEventListener(`click`, () => {
 	});
 
 	clear.style.visibility = 'hidden';
-	// start.style.visibility = 'hidden';
 });
 
 // disabled selected
