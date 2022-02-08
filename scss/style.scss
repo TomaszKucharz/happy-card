@@ -13,6 +13,7 @@
 			align-items: center;
 			flex-direction: column;
 			label {
+				z-index: 2;
 				text-align: center;
 				font-size: 30px;
 				line-height: 60px;
@@ -27,25 +28,48 @@
 				flex-direction: row;
 				justify-content: space-evenly;
 				align-items: center;
-				flex-wrap: wrap;
+				flex-wrap: nowrap;
 				.card {
-					border: 1px solid rgb(138, 138, 138);
+					z-index: 0;
+					border: 1px solid rgb(255, 255, 255);
 					border-radius: 10px;
 					margin: 5vh 5px;
 					height: 250px;
 					width: 170px;
 					text-align: center;
 					line-height: 250px;
-					transition: transform 0.5s;
-					cursor: pointer;
 				}
 				.cardActive {
-					transform: rotateX(180deg);
 					background-image: url('/images/pirate-47705_640.png');
 					background-size: contain;
 					background-position: center;
 					background-repeat: no-repeat;
 					border: none;
+				}
+				.layer {
+					position: absolute;
+					display: flex;
+					.cardLayer {
+						z-index: 1;
+						border: 1px solid rgb(153, 153, 153);
+						//************************************************
+						background-color: rgba($color: #f8cece, $alpha: 0.99);
+						//************************************************
+						border-radius: 10px;
+						margin: 5vh 5px;
+						height: 250px;
+						width: 170px;
+						text-align: center;
+						line-height: 250px;
+						transition: background-image 2s;
+						transition: transform 0.7s;
+					}
+					.cardLayer:hover {
+						box-shadow: 0 0 2px 2px rgb(153, 153, 153);
+					}
+					.moveCard {
+						transform: translateY(-110%);
+					}
 				}
 			}
 			.bar {
@@ -122,25 +146,20 @@
 						width: 110px;
 						line-height: 180px;
 					}
+					.layer {
+						.cardLayer {
+							height: 180px;
+							width: 110px;
+							line-height: 180px;
+							transition: background-image 2s;
+						}
+					}
 				}
 				.bar {
-					display: flex;
-					border: none;
 					width: 360px;
-					justify-content: center;
-					align-items: center;
-					background-color: rgb(255, 166, 0);
-
 					.btn {
-						margin: 0 auto;
-						padding: 2px 5px;
 						min-width: 60px;
 						height: 30px;
-						transition: border 0.5s;
-						cursor: pointer;
-					}
-					.btn:hover {
-						border: 2px solid rgb(13, 226, 137);
 					}
 				}
 				.activeGame {
@@ -158,34 +177,23 @@
 					font-size: 20px;
 				}
 				.header {
-					display: flex;
-					flex-direction: row;
-					justify-content: space-evenly;
-					align-items: center;
-					flex-wrap: wrap;
 					.card {
 						width: 90px;
 					}
+					.layer {
+						.cardLayer {
+							height: 180px;
+							width: 90px;
+							line-height: 180px;
+							transition: background-image 2s;
+						}
+					}
 				}
 				.bar {
-					display: flex;
-					border: none;
-					padding: 10px 20px;
-					width: 100%;
-					justify-content: center;
-					align-items: center;
-					background-color: rgb(255, 38, 0);
-
+					width: 300px;
 					.btn {
-						margin: 0 30px;
-						padding: 2px 5px;
 						min-width: 40px;
 						height: 30px;
-						transition: border 0.5s;
-						cursor: pointer;
-					}
-					.btn:hover {
-						border: 2px solid rgb(13, 226, 137);
 					}
 				}
 				.activeGame {
@@ -208,26 +216,19 @@
 						width: 70px;
 						line-height: 130px;
 					}
-					.card:hover {
-						background-color: rgb(131, 251, 177);
-						transform: rotateX(180deg);
+					.layer {
+						.cardLayer {
+							height: 130px;
+							width: 70px;
+							line-height: 130px;
+						}
 					}
 				}
 				.bar {
-					border: none;
-					padding: 10px 20px;
-					width: 100%;
-					background-color: rgb(25, 0, 255);
+					width: 240px;
 					.btn {
-						margin: 0 10px;
-						padding: 2px 5px;
 						max-width: 30px;
 						height: 20px;
-						transition: border 0.5s;
-						cursor: pointer;
-					}
-					.btn:hover {
-						border: 2px solid rgb(13, 226, 137);
 					}
 				}
 			}
