@@ -50,7 +50,7 @@
 					.cardLayer {
 						z-index: 1;
 						border: 1px solid rgb(153, 153, 153);
-						background-color: rgba($color: #f8cece, $alpha: 1);
+						background-color: rgba($color: #ffffff, $alpha: 1);
 						border-radius: 10px;
 						margin: 5vh 5px;
 						height: 250px;
@@ -58,9 +58,6 @@
 						text-align: center;
 						line-height: 250px;
 						transition: transform 1s;
-						img {
-							border-radius: 10px;
-						}
 					}
 					.cardLayer:hover {
 						box-shadow: 0 0 2px 2px rgb(153, 153, 153);
@@ -143,6 +140,10 @@
 						height: 180px;
 						width: 110px;
 						line-height: 180px;
+					}
+					.cardActive {
+						border: none;
+						visibility: visible;
 					}
 					.layer {
 						.cardLayer {
