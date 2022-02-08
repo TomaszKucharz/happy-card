@@ -198,6 +198,8 @@
 				.activeGame {
 					.btnActive {
 						width: 100px;
+						padding: 5px 10px;
+						font-size: 1rem;
 					}
 				}
 			}
@@ -207,7 +209,7 @@
 		body {
 			.wrapper {
 				label {
-					font-size: 18px;
+					font-size: 14px;
 				}
 				.header {
 					.img {
@@ -229,6 +231,13 @@
 					.btn {
 						max-width: 30px;
 						height: 20px;
+					}
+				}
+				.activeGame {
+					.btnActive {
+						width: 100px;
+						padding: 2px 5px;
+						font-size: 0.8rem;
 					}
 				}
 			}
